@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="form">
+        <input type="number" name="" id="quantity" placeholder="Quantity"><br>
+        <input type="number" name="" id="weight" placeholder="weight"><br>
+        <p id="price"></p><br>
+        <input type="button" value="Check" onclick="check()">
+    </form>
+    <div class="count">
+        <div id="calc">0</div>
+        <button onclick="add()">+</button>
+        <button onclick="minus()">-</button>
+    </div>
+</body>
+<script>
+    
+    function checkm(quantity, weight, Totprice){
+        return quantity * (weight * Totprice)
+    }
+    let quant = document.getElementById('quantity');
+    quant.addEventListener('input', () => {
+        let quantval = document.getElementById('quantity').value;
+        let weighval = document.getElementById('weight').value;
+        if(quantval != '' || weighval != ''){
+            document.getElementById('price').textContent = checkm(quantval, weighval, 100);   
+        }
+    })
+    let weigh = document.getElementById('weight');
+        weigh.addEventListener('input', ()=> {
+            let quantval = document.getElementById('quantity').value;
+            let weighval = document.getElementById('weight').value;
+            if(quantval != '' || weighval != ''){
+                document.getElementById('price').textContent = checkm(quantval, weighval, 100);   
+            }
+        }) 
+</script>
+</html>
